@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1525752554 source:/home/linux/Documents/opengl/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<GL/glut.h>
+	"movement.h"
+
+1525752523 /home/linux/Documents/opengl/movement.h
+
+1525752577 source:/home/linux/Documents/opengl/movement.c
+	"movement.h"
+
