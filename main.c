@@ -42,10 +42,6 @@
  * 1992 David G Yu -- Silicon Graphics Computer Systems
  */
 
-/*
-Waddup 
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -259,7 +255,7 @@ redCube->moveDown = 0;
 redCube->verticalVel = 0;
 redCube->horizontalVel = 0;
 redCube->ACCELCONST = 0.005;
-redCube->DECELCONST = 0.0005;
+redCube->DECELCONST = 0.5;
 redCube->slowDownHorizontal = 0;
 redCube->slowDownVertical = 0;
 }
@@ -551,10 +547,10 @@ display(void)
   glPopMatrix();
 
   //Custom Prop A
-  drawCustomProp(0.2,0.2,0.2,4,-4,1,CYAN);
+  drawCustomProp(0.2,0.2,0.2,4,-4,0,CYAN);
 
   //Custom Prop B
-  drawCustomProp(0.2,0.2,0.2,-4,6,1,CYAN);
+  drawCustomProp(0.2,0.2,0.2,-4,6,0,CYAN);
 
 
   glPopMatrix();
@@ -690,7 +686,7 @@ visible(int state)
 int
 main(int argc, char **argv)
 {
-  initiliazeRedCube();
+  initiliazeRedCube();              //sets up
   int width = 1280, height = 900;
   int i;
   char *name;
@@ -770,7 +766,7 @@ main(int argc, char **argv)
 
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
-  glTranslatef(0.0, 0.0, -2.0);
+  glTranslatef(0.0, 0.0, -2);
 
   glEnable(GL_DEPTH_TEST);
 
