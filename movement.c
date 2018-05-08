@@ -81,32 +81,35 @@ void handleMovement(struct cube *redCube){
 void hitBoxDetection(struct cube *redCube){
   //BLOCK A HITBOXES
 
-  if(redCube->moveRight && redCube->xPos>2 && redCube->xPos < 4 && redCube->yPos < -.5 && redCube->yPos > -10){
+  if(redCube->moveRight && redCube->xPos> 1.95 && redCube->xPos < 2 && redCube->yPos < -2 && redCube->yPos > -6){
     redCube->slowDownHorizontal = 1;
   }
 
-  if(redCube->moveLeft && redCube->xPos <8 && redCube->xPos > 4  && redCube->yPos < -.5 && redCube->yPos > -10){
+  if(redCube->moveLeft && redCube->xPos <6 && redCube->xPos > 5  && redCube->yPos < -2 && redCube->yPos > -6){
     redCube->slowDownHorizontal = 1;
   }
 
-  if(redCube->moveDown && redCube->yPos<-1  && redCube->xPos > 2 && redCube->xPos < 9.5){
+  if(redCube->moveDown && redCube->yPos<-2  && redCube->xPos > 2 && redCube->xPos < 6){
     redCube->slowDownVertical = 1;
   }
 
   //END BLOCK A HIT BOXES
 
   //Block B Hit Box Starts
-  if(redCube->moveUp && redCube->yPos > 0.178 && redCube->yPos <3.66  && redCube->xPos > -7 && redCube->xPos < -1){
+  if(redCube->moveUp && redCube->yPos > 2 && redCube->yPos <2.5  && redCube->xPos > -6 && redCube->xPos < -2){
     redCube->slowDownVertical = 1;
   }
 
-  if(redCube->moveLeft && redCube->xPos < -1.146 && redCube->xPos > -4.277  && redCube->yPos < 7.18 && redCube->yPos > 1.943){
+  if(redCube->moveLeft && redCube->xPos < -2 && redCube->xPos > -4  && redCube->yPos < 8 && redCube->yPos > 2){
     redCube->slowDownHorizontal = 1;
   }
 
 
-  if(redCube->moveRight && redCube->xPos > -7 && redCube->xPos < -5.08  && redCube->yPos < 7.18 && redCube->yPos > 1.943){
+  if(redCube->moveRight && redCube->xPos > -6.2 && redCube->xPos < -5  && redCube->yPos < 8 && redCube->yPos > 2){
     redCube->slowDownHorizontal = 1;
   }
+
   //End Block B hitbox
 }
+
+
