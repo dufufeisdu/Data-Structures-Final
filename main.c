@@ -46,7 +46,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include <GL/glut.h>
+#ifdef __APPLE__
+  #include <GLUT/GLUT.h>
+#else
+  #include <GL/GLUT.h>
+#endif
+
 #include "movement.h"
 
 static int useRGB = 1;
