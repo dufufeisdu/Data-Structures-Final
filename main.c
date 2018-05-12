@@ -261,7 +261,6 @@ initiliazeRedCube ()
   redCube->DECELCONST = 0.5;
   redCube->slowDownHorizontal = 0;
   redCube->slowDownVertical = 0;
-  redCube->aiMoveUp = 0;
 }
 
 
