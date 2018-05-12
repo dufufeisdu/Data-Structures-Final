@@ -60,7 +60,7 @@ static int useQuads = 1;
 static int tick = -1;
 static int moving = 1;
 
-static int tock = 1;
+static int tock = 0;
 
 struct cube *redCube;
 
@@ -279,7 +279,7 @@ showCordinates ()
   snprintf (output, 50, "%f", (redCube->zPos));
   print (5, 8, 0, output);
 
-  snprintf (output, 50, "%d", tock);
+  snprintf(output, 50, "%d", tock);
   print (-3, 8, 0, output);
 }
 
@@ -291,18 +291,18 @@ controlMovement ()
   showCordinates ();		//Show coordinate of player for debugging
   hitBoxDetection (redCube);	//Enable hitbox detection
   handleMovement (redCube);
+  getDecision(redCube,tock);
   tockClock ();
 }
 
 void
 tockClock ()
 {
-
-  if (tock >= 1000)
+  tock += 1;
+  if (tock >= 100)
     {
       tock = 0;
     }
-  tock += 1;
 }
 
 void
