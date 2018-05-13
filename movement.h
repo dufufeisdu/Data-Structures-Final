@@ -20,6 +20,7 @@ double DECELCONST;
 
 int slowDownHorizontal;
 int slowDownVertical;
+int aiMoveUp;
 };
 
 void handleMovement(struct cube *redCube);

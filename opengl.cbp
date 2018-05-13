@@ -42,6 +42,10 @@
 			<Add library="GL" />
 			<Add library="X11" />
 		</Linker>
+		<Unit filename="ai.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ai.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

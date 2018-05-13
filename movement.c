@@ -75,12 +75,7 @@ void handleMovement(struct cube *redCube){
 }
 
 
-
-
-
 void hitBoxDetection(struct cube *redCube){
-
-
   //Bounds of Map
 
   if(redCube->moveDown && redCube->yPos < -6){
@@ -98,10 +93,14 @@ void hitBoxDetection(struct cube *redCube){
   if(redCube->moveRight && redCube->xPos > 8){
     redCube->slowDownHorizontal = 1;
   }
+
+
+
   //BLOCK A HITBOXES
 
-  if(redCube->moveRight && redCube->xPos> 1.95 && redCube->xPos < 2 && redCube->yPos < -2 && redCube->yPos > -8){
+  if(redCube->moveRight && redCube->xPos> 1.95 && redCube->xPos < 3 && redCube->yPos < -2 && redCube->yPos > -8){
     redCube->slowDownHorizontal = 1;
+    redCube->aiMoveUp = 1;
   }
 
   if(redCube->moveLeft && redCube->xPos <6 && redCube->xPos > 5  && redCube->yPos < -2 && redCube->yPos > -6){
