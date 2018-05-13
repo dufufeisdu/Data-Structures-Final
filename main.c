@@ -248,8 +248,8 @@ initiliazeRedCube ()
 {
   redCube = malloc (sizeof (struct cube));
 
-  redCube->xPos = 0;
-  redCube->yPos = 0;
+  redCube->xPos = -4;
+  redCube->yPos = -4;
   redCube->zPos = 0;
   redCube->moveRight = 0;
   redCube->moveLeft = 0;
@@ -257,8 +257,8 @@ initiliazeRedCube ()
   redCube->moveDown = 0;
   redCube->verticalVel = 0;
   redCube->horizontalVel = 0;
-  redCube->ACCELCONST = 0.005;
-  redCube->DECELCONST = 0.5;
+  redCube->ACCELCONST = 0.0025;
+  redCube->DECELCONST = 0.005;
   redCube->slowDownHorizontal = 0;
   redCube->slowDownVertical = 0;
 }
@@ -288,9 +288,9 @@ controlMovement ()
 {
 
   showCordinates ();		//Show coordinate of player for debugging
-  hitBoxDetection (redCube);	//Enable hitbox detection
+  hitBoxDetection (redCube);
+  getDecision(redCube,tock);	//Enable hitbox detection
   handleMovement (redCube);
-  getDecision(redCube,tock);
   tockClock ();
 }
 
@@ -298,7 +298,7 @@ void
 tockClock ()
 {
   tock += 1;
-  if (tock >= 100)
+  if (tock >= 1000)
     {
       tock = 0;
     }
