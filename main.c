@@ -268,6 +268,15 @@ showCordinates()
   print(-3, 8, 0, output);
 }
 
+void tockClock()
+{
+  tock += 1;
+  if (tock >= 1000)
+  {
+    tock = 0;
+  }
+}
+
 static void
 controlMovement()
 {
@@ -277,15 +286,6 @@ controlMovement()
   getDecision(redCube, tock); //Enable hitbox detection
   handleMovement(redCube);
   tockClock();
-}
-
-void tockClock()
-{
-  tock += 1;
-  if (tock >= 1000)
-  {
-    tock = 0;
-  }
 }
 
 void buildColormap(void)
